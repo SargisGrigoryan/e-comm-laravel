@@ -18,8 +18,12 @@
                     <li><b>${{ $data['price'] }}</b></li>
                     <li>Category - {{ $data['category'] }}</li>
                 </ul>
-                <button class="btn btn-primary">Add to Card</button>
-                <button class="btn btn-success">Buy now</button>
+                <form action="/add_to_cart" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $data['id'] }}">
+                    <button class="btn btn-primary">Add to Card</button>
+                </form>
+                <button class="btn btn-success mt-2">Buy now</button>
                 <hr>
                 <div>Descr`</div>
                 <div>{{ $data['descr'] }}</div>
