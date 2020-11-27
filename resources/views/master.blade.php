@@ -19,6 +19,9 @@
             padding: 50px 0;
             min-height: calc(100vh - 171px);
         }
+        .product-image{
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
