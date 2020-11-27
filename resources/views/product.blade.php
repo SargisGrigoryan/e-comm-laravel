@@ -23,13 +23,15 @@
 
               <div class="carousel-inner">
                   @foreach ($data as $product)
-                  <div class="carousel-item {{ $product['id']==1?'active':'' }}">
-                    <img src="{{ $product['slider'] }}" class="d-block w-100 slider-img" alt="Image">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>{{ $product['name'] }}</h5>
-                      <p>{{ $product['descr'] }}</p>
+                    <div class="carousel-item {{ $product['id']==1?'active':'' }}">
+                      <a href="detail/{{ $product['id'] }}">
+                        <img src="{{ $product['slider'] }}" class="d-block w-100 slider-img" alt="Image">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>{{ $product['name'] }}</h5>
+                          <p>{{ $product['descr'] }}</p>
+                        </div>
+                      </a>
                     </div>
-                  </div>
                   @endforeach
               </div>
 
@@ -52,11 +54,13 @@
             </div>
 
             @for ($i = 0; $i < 6; $i++)
-              <div class="col-2 mb-3 text-center">
-                <img src="{{ $data[$i]['gallery'] }}" class="top-product-image" alt="Image">
-                <div>
-                  <h5>{{ $data[$i]['name'] }}</h5>
-                </div>
+              <div class="col-lg-2 col-md-4 mb-3 text-center">
+                <a href="detail/{{ $data[$i]['id'] }}">
+                  <img src="{{ $data[$i]['gallery'] }}" class="top-product-image" alt="Image">
+                  <div>
+                    <h5>{{ $data[$i]['name'] }}</h5>
+                  </div>
+                </a>
               </div>
             @endfor
 
@@ -65,13 +69,15 @@
             </div>
 
             @foreach ($data as $product)
-              <div class="col-3 mb-5 text-center">
-                <div class="product-bg">
-                  <img src="{{ $product['gallery'] }}" class="product-image" alt="Image">
-                  <div>
-                    <h5>{{ $product['name'] }}</h5>
+              <div class="col-lg-3 col-md-6 mb-5 text-center">
+                <a href="detail/{{ $product['id'] }}">
+                  <div class="product-bg">
+                    <img src="{{ $product['gallery'] }}" class="product-image" alt="Image">
+                    <div>
+                      <h5>{{ $product['name'] }}</h5>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             @endforeach
         </div>

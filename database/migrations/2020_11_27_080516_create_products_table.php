@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->string('descr');
             $table->string('gallery');
+            $table->string('slider');
             $table->timestamps();
         });
     }

@@ -8,6 +8,8 @@
 
     {{-- Bootstrap css --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    {{-- Optional --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {{-- Main css --}}
     <style>
         *{
@@ -25,6 +27,9 @@
         .product-image{
             max-height: 350px;
         }
+        .detail-image{
+            max-height: 400px;
+        }
         .product-bg{
             border: 1px solid transparent;
             width: fit-content;
@@ -34,6 +39,9 @@
         .product-bg:hover{
             border-bottom: 1px solid #707070;
             cursor: pointer;
+        }
+        ul li{
+            list-style: none;
         }
     </style>
 </head>
