@@ -24,7 +24,7 @@
               <div class="carousel-inner">
                   @foreach ($data as $product)
                   <div class="carousel-item {{ $product['id']==1?'active':'' }}">
-                    <img src="{{ $product['gallery'] }}" class="d-block w-100 slider-img" alt="Image">
+                    <img src="{{ $product['slider'] }}" class="d-block w-100 slider-img" alt="Image">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>{{ $product['name'] }}</h5>
                       <p>{{ $product['descr'] }}</p>
@@ -47,15 +47,30 @@
         </div>
 
         <div class="row">
+            <div class="col-12 mt-3 mb-3 text-center">
+              <h3>Top Products</h3>
+            </div>
+
+            @for ($i = 0; $i < 6; $i++)
+              <div class="col-2 mb-3 text-center">
+                <img src="{{ $data[$i]['gallery'] }}" class="top-product-image" alt="Image">
+                <div>
+                  <h5>{{ $data[$i]['name'] }}</h5>
+                </div>
+              </div>
+            @endfor
+
             <div class="col-12 mt-5 mb-5 text-center">
-              <h2>Trending Products</h2>
+              <h2>All Products</h2>
             </div>
 
             @foreach ($data as $product)
-              <div class="col-4 mb-3">
-                <img src="{{ $product['gallery'] }}" class="product-image" alt="Image">
-                <div class="">
-                  <h5>{{ $product['name'] }}</h5>
+              <div class="col-3 mb-5 text-center">
+                <div class="product-bg">
+                  <img src="{{ $product['gallery'] }}" class="product-image" alt="Image">
+                  <div>
+                    <h5>{{ $product['name'] }}</h5>
+                  </div>
                 </div>
               </div>
             @endforeach

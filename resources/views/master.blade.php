@@ -19,8 +19,21 @@
             padding: 50px 0;
             min-height: calc(100vh - 171px);
         }
+        .top-product-image{
+            max-height: 250px;
+        }
         .product-image{
-            max-width: 100%;
+            max-height: 350px;
+        }
+        .product-bg{
+            border: 1px solid transparent;
+            width: fit-content;
+            margin: 0 auto;
+            transition: border 0.3s ease-in-out;
+        }
+        .product-bg:hover{
+            border-bottom: 1px solid #707070;
+            cursor: pointer;
         }
     </style>
 </head>
