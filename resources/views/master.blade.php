@@ -30,6 +30,9 @@
         .detail-image{
             max-height: 400px;
         }
+        .cart-image{
+            max-height: 150px;
+        }
         .product-bg{
             border: 1px solid transparent;
             width: fit-content;
