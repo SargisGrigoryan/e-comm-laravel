@@ -9,7 +9,7 @@
             
               <ol class="carousel-indicators">
 
-              @for ($i = 0; $i < count($data); $i++)
+              @for ($i = 0; $i < 4; $i++)
 
                   @if ($i == 0)
                       <li data-target="#carouselExampleCaptions" data-slide-to="{{ $i }}" class="active"></li>
@@ -22,17 +22,16 @@
 
 
               <div class="carousel-inner">
-                  @foreach ($data as $product)
-                    <div class="carousel-item {{ $product['id']==1?'active':'' }}">
-                      <a href="detail/{{ $product['id'] }}">
-                        <img src="{{ $product['slider'] }}" class="d-block w-100 slider-img" alt="Image">
+                  @for ($i = 0; $i < 4; $i++)
+                    <div class="carousel-item {{ $data[$i]['id']==1?'active':'' }}">
+                      <a href="detail/{{ $data[$i]['id'] }}">
+                        <img src="{{ $data[$i]['slider'] }}" class="d-block w-100 slider-img" alt="Image">
                         <div class="carousel-caption d-none d-md-block">
-                          <h5>{{ $product['name'] }}</h5>
-                          <p>{{ $product['descr'] }}</p>
+                          <h5>{{ $data[$i]['name'] }}</h5>
                         </div>
                       </a>
                     </div>
-                  @endforeach
+                  @endfor
               </div>
 
 
