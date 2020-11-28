@@ -37,6 +37,8 @@ Route::get('/', [ProductController::class, 'index']);
 Route::get('detail/{id}', [ProductController::class, 'detail']);
 Route::get('search', [ProductController::class, 'search']);
 Route::post('orderplace', [ProductController::class, 'orderPlace']);
-
-
 Route::get('/myorders', [ProductController::class, 'myOrders']);
+
+Route::view('/register', 'register');
+
+Route::post('/register', [UserController::class, 'register']);

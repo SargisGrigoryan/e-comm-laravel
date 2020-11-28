@@ -18,4 +18,19 @@ class UserController extends Controller
             return redirect('/');
         }
     }
+
+    function register(Request $req){
+        $user = new User;
+        $user->name = $req->username;
+        $user->email = $req->email;
+        $user->password = Hash::make($req->password);
+
+        // Check email if not registered
+        if(User::where(['email' => $user->email])->first()){
+            return "You email is already registered, please try another one...";
+        }else{
+            $user->save();
+            return redirect ('/login');
+        }
+    }
 }
