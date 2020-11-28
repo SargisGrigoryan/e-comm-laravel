@@ -39,3 +39,4 @@ Route::get('search', [ProductController::class, 'search']);
 Route::post('orderplace', [ProductController::class, 'orderPlace']);
 
 
+Route::get('/myorders', [ProductController::class, 'myOrders']);
