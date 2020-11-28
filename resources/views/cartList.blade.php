@@ -2,8 +2,9 @@
 @section('content')
 <div class="container">
     <div class="row mt-5 mb-5">
-        <div class="col-12">
+        <div class="col-12 mb-3">
             <h2>Your cart list</h2>
+            <a href="/ordernow" class="btn btn-success">Order now</a>
         </div>
         <div class="col-12">
             <table class="table">
@@ -23,7 +24,7 @@
                         <td><img class="cart-image" src="{{ $product->gallery }}" alt="Image"></td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
-                        <td><a href="/removecart/{{ $product->cart_id }}" class="btn btn-warning"><span class="material-icons">delete</span></a></td>
+                        <td><a href="/removecart/{{ $product->cart_id }}" class="btn btn-danger"><span class="material-icons">delete</span></a></td>
                     </tr>
                     @endforeach
                 </tbody>
