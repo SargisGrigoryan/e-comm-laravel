@@ -23,7 +23,7 @@
                         <td><img class="cart-image" src="{{ $product->gallery }}" alt="Image"></td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->price }}</td>
-                        <td><button class="btn btn-warning"><span class="material-icons">delete</span></button></td>
+                        <td><a href="/removecart/{{ $product->cart_id }}" class="btn btn-warning"><span class="material-icons">delete</span></a></td>
                     </tr>
                     @endforeach
                 </tbody>
